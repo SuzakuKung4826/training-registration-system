@@ -1,0 +1,5 @@
+# Replace training.example.com with your domain before use.
+training.example.com {
+    encode gzip zstd
+    reverse_proxy 127.0.0.1:3100
+}

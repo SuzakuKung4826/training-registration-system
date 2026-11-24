@@ -1,0 +1,33 @@
+{
+  "name": "training-registration",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ระบบลงทะเบียนอบรม — Phase 1 MVP",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "setup": "node server/setup.js",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --watch --env-file-if-exists=.env server/index.js",
+    "seed": "node --env-file-if-exists=.env server/seed.js",
+    "worker": "node --env-file-if-exists=.env server/worker.js",
+    "backup": "node --env-file-if-exists=.env server/backup.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "check": "node --check server/app.js && node --check server/service.js && node --check public/app.js",
+    "test:browser": "playwright test"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "nodemailer": "^7.0.10",
+    "pg": "^8.16.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1"
+  }
+}
